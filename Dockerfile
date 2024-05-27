@@ -9,7 +9,7 @@ RUN npm ci
 # Production only deps stage
 FROM base as production-deps
 WORKDIR /app
-ADD package.json package-lock.json ./
+ADD package.json package-lock.json .env ./
 RUN npm ci --omit=dev
 
 # Install pino-pretty
