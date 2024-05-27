@@ -25,7 +25,7 @@ RUN node ace build
 # Production stage
 FROM base
 ARG PORT
-ENV PORT=$PORT
+ENV PORT $PORT
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=production-deps /app/node_modules /app/node_modules
