@@ -12,6 +12,9 @@ WORKDIR /app
 ADD package.json package-lock.json ./
 RUN npm ci --omit=dev
 
+# Install pino-pretty
+RUN npm install pino-pretty
+
 # Build stage
 FROM base as build
 WORKDIR /app
