@@ -25,8 +25,15 @@ RUN node ace build
 # Production stage
 FROM base
 ARG PORT
-ENV PORT $PORT
+ENV TZ=UTC
+ENV HOST=0.0.0.0
+ENV LOG_LEVEL=info
+ENV APP_KEY=KsSHcSwIiCsxg2jQvoF7DPsnqzpnfiVd
 ENV NODE_ENV=production
+ENV DB_HOST=127.0.0.1
+ENV DB_PORT=5432
+ENV DB_USER=postgres
+ENV PORT $PORT
 WORKDIR /app
 COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app
