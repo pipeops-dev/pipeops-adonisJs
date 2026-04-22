@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.npm \
 # Production-only deps stage
 FROM base as production-deps
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .env ./
 RUN --mount=type=cache,target=/root/.npm \
     npm ci --omit=dev
 
