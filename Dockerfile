@@ -35,12 +35,12 @@ ARG PORT
 ENV TZ=UTC \
     HOST=0.0.0.0 \
     LOG_LEVEL=info \
-    APP_KEY=KsSHcSwIiCsxg2jQvoF7DPsnqzpnfiVd \
+    APP_KEY= \
     NODE_ENV=production \
-    DB_HOST=127.0.0.1 \
-    DB_PORT=5432 \
-    DB_USER=postgres \
-    DB_DATABASE=pipeops \
+    DB_HOST= \
+    DB_PORT= \
+    DB_USER= \
+    DB_DATABASE= \
     PORT=$PORT
 WORKDIR /app
 COPY --from=production-deps /app/node_modules /app/node_modules
